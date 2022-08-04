@@ -1,24 +1,20 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'indicator.dart';
-import 'optimal_page.dart';
 
-class IntroPage extends StatefulWidget {
-
-
-  IntroPage({Key? key,}) : super(key: key);
+class TrustPage extends StatefulWidget {
+  const TrustPage({Key? key}) : super(key: key);
 
   @override
-  State<IntroPage> createState() => _IntroPageState();
+  State<TrustPage> createState() => _TrustPageState();
 }
 
-class _IntroPageState extends State<IntroPage> {
+class _TrustPageState extends State<TrustPage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -46,13 +42,12 @@ class _IntroPageState extends State<IntroPage> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 30, right: 30),
-                      child: SvgPicture.asset('assets/images/ic_fastboy.svg'),
+                      child: SvgPicture.asset('assets/icons/ic_trust.svg'),
                     ),
-
                     Text(
-                      'TỐC ĐỘ',
+                      'TIN CẬY',
                       style: TextStyle(
-                          fontSize: 28,
+                          fontSize: 24,
                           color: Color(0xFFFF6116),
                           fontWeight: FontWeight.w800),
                     ),
@@ -72,7 +67,28 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'Tối ưu thời gian tuyển dụng',
+                            'Mức phí tối ưu nhât trên thị',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 25),
+                      child: Row(
+                        children: [
+                         Text(''),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'trường.',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -97,7 +113,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'Kết nối 1.000 Doanh nghiệp IT',
+                            'Hệ thống CMS được cập nhật',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -118,28 +134,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'cung ứng & tuyển dụng trên toàn quốc',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 25),
-                      child: Row(
-                        children: [
-                          Text(''),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            'toàn quốc',
+                            'và phát triển liên tục.',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -164,7 +159,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'Thao tác đơn giản.',
+                            'Luôn phát triển và đồng',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -177,19 +172,15 @@ class _IntroPageState extends State<IntroPage> {
                       height: 5,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.only(left: 25),
                       child: Row(
                         children: [
-                          SvgPicture.asset(
-                            'assets/icons/ic_circle.svg',
-                            height: 5,
-                            width: 5,
-                          ),
+                         Text(''),
                           SizedBox(
                             width: 5,
                           ),
                           Text(
-                            'Tận dụng nguồn lực của nhiều ',
+                            'hành cùng doanh nghiệp ',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -210,7 +201,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'doanh nghiệp CNTT.',
+                            'CNTT Việt Nam.',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -236,7 +227,6 @@ class _IntroPageState extends State<IntroPage> {
                       padding: EdgeInsets.only(left: 10),
                       child: GestureDetector(
                         onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => OptimalPage()));
                         },
                         child: Container(
                           decoration: BoxDecoration(

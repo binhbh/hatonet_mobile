@@ -2,23 +2,23 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hatonet_mobile/app/view/home/intro/trust_page.dart';
 
 import 'indicator.dart';
-import 'optimal_page.dart';
 
-class IntroPage extends StatefulWidget {
+class OptimalPage extends StatefulWidget {
 
 
-  IntroPage({Key? key,}) : super(key: key);
+  OptimalPage({Key? key,}) : super(key: key);
 
   @override
-  State<IntroPage> createState() => _IntroPageState();
+  State<OptimalPage> createState() => _OptimalPageState();
 }
 
-class _IntroPageState extends State<IntroPage> {
+class _OptimalPageState extends State<OptimalPage> {
   @override
   Widget build(BuildContext context) {
-
+    final bool isActive;
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -46,18 +46,20 @@ class _IntroPageState extends State<IntroPage> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 30, right: 30),
-                      child: SvgPicture.asset('assets/images/ic_fastboy.svg'),
+                      child: SvgPicture.asset('assets/icons/ic_timemachine.svg'),
                     ),
-
+                    SizedBox(
+                      height: 40,
+                    ),
                     Text(
-                      'TỐC ĐỘ',
+                      'TỐI ƯU',
                       style: TextStyle(
                           fontSize: 28,
                           color: Color(0xFFFF6116),
                           fontWeight: FontWeight.w800),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 25,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 20),
@@ -72,32 +74,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'Tối ưu thời gian tuyển dụng',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            'assets/icons/ic_circle.svg',
-                            height: 5,
-                            width: 5,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            'Kết nối 1.000 Doanh nghiệp IT',
+                            'Tối ưu được chi phí cơ hội',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -118,7 +95,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'cung ứng & tuyển dụng trên toàn quốc',
+                            'khi có nhu cầu lớn về nhân',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -139,7 +116,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'toàn quốc',
+                            'sự onsite.',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -164,32 +141,7 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'Thao tác đơn giản.',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            'assets/icons/ic_circle.svg',
-                            height: 5,
-                            width: 5,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            'Tận dụng nguồn lực của nhiều ',
+                            'Hỗ trợ kết nối thông qua hệ',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -210,7 +162,49 @@ class _IntroPageState extends State<IntroPage> {
                             width: 5,
                           ),
                           Text(
-                            'doanh nghiệp CNTT.',
+                            'sinh thái của Hatonet đến',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 25),
+                      child: Row(
+                        children: [
+                          Text(''),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'các doanh nghiệp CNTT',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 25),
+                      child: Row(
+                        children: [
+                          Text(''),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'trên toàn quốc.',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -234,10 +228,11 @@ class _IntroPageState extends State<IntroPage> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 10),
-                      child: GestureDetector(
+                      child: InkWell(
                         onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => OptimalPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => TrustPage()));
                         },
+
                         child: Container(
                           decoration: BoxDecoration(
                               color: Color(0xFFFF6116),
