@@ -167,7 +167,8 @@ flutter:
     - assets/
     - assets/icons/
     - assets/images/
-
+    - assets/images/img_logo.svg
+    - assets/images/logo hatonet-07 (2).png
     - assets/images/logo hatonet-06 (2).png
     - assets/images/logo hatonet-03 (1).png
     - assets/translations/
