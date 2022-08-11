@@ -1,10 +1,14 @@
 
 import 'package:flutter/material.dart';
-
+import 'package:hatonet_mobile/app/provider/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'app/view/home/spalsh_screen/hello.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main() {
+
+
+void main(){
   runApp(MyApp());
 }
 
@@ -21,6 +25,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFFE65C00),
       ),
       home: HelloPage(),
+      // home: OnBoarding(),
     );
   }
 }

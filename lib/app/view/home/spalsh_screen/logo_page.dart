@@ -1,12 +1,8 @@
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
+
 import 'dart:async';
-
-
 import 'package:flutter/material.dart';
-
-import '../intro/intro_page.dart';
-
-
-
+import 'package:hatonet_mobile/app/view/home/intro/page_intro.dart';
 
 
 class LogoPage extends StatefulWidget {
@@ -22,8 +18,8 @@ class _LogoPageState extends State<LogoPage> {
   void initState() {
 
     super.initState();
-    Timer(Duration(seconds: 20),(){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>IntroPage()));
+    Timer(Duration(seconds: 3),(){
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>OnBoarding()));
     });
   }
 
@@ -34,9 +30,10 @@ class _LogoPageState extends State<LogoPage> {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(30),
-            child: Image.asset('assets/images/logo hatonet-06 (2).png'),
+            padding: EdgeInsets.fromLTRB(30, 100, 30, 0),
+            child: Image.asset('assets/images/img_hatonet.png'),
           ),
+
           Spacer(),
           Container(
             child: Padding(

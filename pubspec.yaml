@@ -112,9 +112,17 @@ dependencies:
 
   http: ^0.13.3
 
+  google_fonts: ^3.0.1
+  firebase_database:
+
+  firebase_auth: ^3.6.2
+  google_sign_in: ^5.4.1
+
   flutter_scale_tap:
     git: https://github.com/magicpro97/flutter_scale_tap
   font_awesome_flutter: ^10.1.0
+  firebase_core: ^1.20.0
+
 
 
 
