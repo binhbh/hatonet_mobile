@@ -40,7 +40,7 @@ class SliderPage extends StatelessWidget {
                 child: Text(
                   'Bỏ qua',
                   style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 18,
                       color: Colors.black,
                       fontWeight: FontWeight.normal),
                 ),

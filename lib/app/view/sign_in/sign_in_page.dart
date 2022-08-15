@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hatonet_mobile/app/profile/profile_sign_in.dart';
-import 'package:hatonet_mobile/app/provider/google_sign_in.dart';
+import 'package:hatonet_mobile/app/view/home/bottom/bottom_bar.dart';
 import 'package:hatonet_mobile/app/view/home/forgot_password/forgot_password_page.dart';
 import 'package:provider/provider.dart';
 import '../sign_up/sign_up_page.dart';
@@ -157,7 +156,7 @@ class _SignInPageState extends State<SignInPage> {
                   child: GestureDetector(
                     onTap: () {
                       SignInOnclick();
-                    
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomBarPage()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
