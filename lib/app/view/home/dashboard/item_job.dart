@@ -14,9 +14,8 @@ class ItemJob extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          color: Colors.black12, borderRadius: BorderRadius.circular(2)),
-      padding: EdgeInsets.symmetric(vertical: 1, horizontal: 1),
+
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 2),
       child: Container(
         width: double.infinity,
         height: 80,
@@ -26,8 +25,8 @@ class ItemJob extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                height: 50,
-                width: 50,
+                height: 80,
+                width: 80,
                 color: Color(0xFFEFEBEB),
                 child: SvgPicture.asset(
                   item.image,
@@ -37,6 +36,9 @@ class ItemJob extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              width: 5,
+            ),
             Expanded(
               flex: 3,
               child: Column(
@@ -44,19 +46,36 @@ class ItemJob extends StatelessWidget {
                   Text(
                     item.name,
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 14,
                         color: Colors.black,
                         fontWeight: FontWeight.normal),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    item.date,
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      item.date,
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ),
+                  Padding(
+
+                    padding: EdgeInsets.only(right: 10),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        height: 10,
+                        width: 10,
+                        decoration: BoxDecoration(
+                            color: Color(0xFF2D36FE),
+                            borderRadius: BorderRadius.circular(15)),
+                      ),
+                    ),
                   )
                 ],
               ),

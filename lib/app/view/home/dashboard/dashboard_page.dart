@@ -21,8 +21,11 @@ class _DashBoardPageState extends State<DashBoardPage> {
         color: Colors.white,
         child: Column(
           children: [
+            SizedBox(
+              height: 10,
+            ),
             SvgPicture.asset(
-              '',
+              'assets/images/logo hatonet-05 (1).svg',
               height: 55,
               width: 250,
             ),
@@ -55,7 +58,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         decoration: BoxDecoration(
                             color: Color(0xFF117BBF),
                             borderRadius: BorderRadius.circular(15)),
-                        height: 90,
+                        height: 80,
                         child: Column(
                           children: [
                             Padding(
@@ -116,7 +119,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         decoration: BoxDecoration(
                             color: Color(0xFF26AE60),
                             borderRadius: BorderRadius.circular(15)),
-                        height: 90,
+                        height: 80,
                         child: Column(
                           children: [
                             Padding(
@@ -173,7 +176,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: 5,
             ),
             Container(
               width: double.infinity,
@@ -188,7 +191,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         decoration: BoxDecoration(
                             color: Color(0xFF363841),
                             borderRadius: BorderRadius.circular(15)),
-                        height: 90,
+                        height: 80,
                         child: Column(
                           children: [
                             Padding(
@@ -249,7 +252,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         decoration: BoxDecoration(
                             color: Color(0xFFFFC850),
                             borderRadius: BorderRadius.circular(15)),
-                        height: 90,
+                        height: 80,
                         child: Column(
                           children: [
                             Padding(
@@ -306,7 +309,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Row(
               children: [
@@ -349,10 +352,26 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ],
             ),
             SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 25),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'VIỆC ĐANG TUYỂN',
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+            ),
+            SizedBox(
               height: 15,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 15, right: 15),
+              padding: EdgeInsets.only(left: 25, right: 10),
               child: Container(
                 height: 360,
                 width: double.infinity,
@@ -361,16 +380,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   physics: BouncingScrollPhysics(),
                   child: Column(
                     children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          'VIỆC ĐANG TUYỂN',
-                          style: TextStyle(
-                              fontSize: 22,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
                       ListView.builder(
                         physics: NeverScrollableScrollPhysics(),
                         itemCount: FAKE_JOB.length,
