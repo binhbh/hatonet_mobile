@@ -61,16 +61,76 @@ class _SignUpPageState extends State<SignUpPage> {
           color: Colors.white,
           height: double.infinity,
           width: double.infinity,
+<<<<<<< Updated upstream
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 SizedBox(
                   height: 20,
+=======
+          child: Column(
+            children: [
+              // Container(
+              //   alignment: Alignment.topLeft,
+              //   height: 50,
+              //   width: double.infinity,
+              //   child: Padding(
+              //     padding: EdgeInsets.only(left: 10),
+              //     child: Image.asset(
+              //       'assets/images/logo hatonet-07 (2).png',
+              //     ),
+              //   ),
+              // ),
+              // Container(
+              //   width: double.infinity,
+              //   height: 50,
+              //   child: Image.asset('assets/images/img_logo.svg'),
+              // ),
+              Text(
+                'Đăng ký tài khoản',
+                style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                  child: Text(
+                    'Để tiếp cận hàng ngàn nhân sự chất lượng tốt từ các doanh nghiệp ở khắp mọi nơi',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 20, right: 20),
+                child: TextField(
+                  controller: _companyController,
+                  keyboardType: TextInputType.text,
+                  style: TextStyle(fontSize: 25),
+                  decoration: InputDecoration(
+                      errorText: _companyInvalid ? _companyErr : null,
+                      contentPadding: EdgeInsets.all(15),
+                      labelText: 'Tên công ty',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8))),
+>>>>>>> Stashed changes
                 ),
                 Row(
                   children: [
                     Expanded(
+<<<<<<< Updated upstream
                       flex: 1,
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -81,11 +141,31 @@ class _SignUpPageState extends State<SignUpPage> {
                                 Navigator.pop(context);
                               },
                               child: Icon(Icons.arrow_back)),
+=======
+                      flex: 3,
+                      child: Container(
+                        height: 1,
+                        color: Color(0xFF455A64),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 3,
+                      child: Center(
+                        child: Container(
+                          child: Text(
+                            ' Hoặc đăng nhập qua',
+                            style: TextStyle(
+                                color: Color(0xFF455A64),
+                                fontSize: 18,
+                                fontWeight: FontWeight.normal),
+                          ),
+>>>>>>> Stashed changes
                         ),
                       ),
                     ),
                     Expanded(
                       flex: 3,
+<<<<<<< Updated upstream
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
@@ -98,6 +178,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
+=======
+                      child: Container(
+                        color: Color(0xFF455A64),
+                        height: 1,
+>>>>>>> Stashed changes
                       ),
                     ),
                   ],
