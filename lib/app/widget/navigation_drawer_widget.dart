@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hatonet_mobile/app/view/home/account/account_page.dart';
 import 'package:hatonet_mobile/app/view/home/dashboard/dashboard_page.dart';
 
 class NavigationDrawerWidget extends StatefulWidget {
@@ -420,6 +421,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                     _hasBeenAccount = !_hasBeenAccount;
                     _hasBeenTextAccount = !_hasBeenTextAccount;
                   });
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AccountPage()));
                 },
                 child: Row(
                   children: [
@@ -460,6 +462,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                     _hasBeencustomer = !_hasBeencustomer;
                     _hasBeenTextcustomer = !_hasBeenTextcustomer;
                   });
+
                 },
                 child: Row(
                   children: [
