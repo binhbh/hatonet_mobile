@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hatonet_mobile/app/view/home/bottom/bottom_bar.dart';
@@ -56,7 +54,6 @@ class _SignInPageState extends State<SignInPage> {
           color: Colors.white,
           height: double.infinity,
           width: double.infinity,
-<<<<<<< Updated upstream
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Column(
@@ -66,7 +63,6 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 5),
-=======
           child: Column(
             children: [
               // Container(
@@ -98,7 +94,6 @@ class _SignInPageState extends State<SignInPage> {
               Center(
                 child: Padding(
                   padding: EdgeInsets.only(left: 20, right: 20),
->>>>>>> Stashed changes
                   child: Text(
                     'Đăng nhập',
                     style: TextStyle(
@@ -107,6 +102,7 @@ class _SignInPageState extends State<SignInPage> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
+    ),
                 SizedBox(
                   height: 15,
                 ),
@@ -139,7 +135,6 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                 ),
-<<<<<<< Updated upstream
                 SizedBox(
                   height: 20,
                 ),
@@ -209,8 +204,8 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                     ),
-=======
               ),
+    ),
               SizedBox(
                 height: 20,
               ),
@@ -291,9 +286,9 @@ class _SignInPageState extends State<SignInPage> {
                         )
                       ],
                     ),
->>>>>>> Stashed changes
                   ),
                 ),
+                    ),
                 SizedBox(
                   height: 20,
                 ),
@@ -360,9 +355,6 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ],
                 ),
-<<<<<<< Updated upstream
-
-
                 SizedBox(
                   height: 20,
                 ),
@@ -415,7 +407,6 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ],
             ),
-=======
               ),
               SizedBox(
                 height: 10,
@@ -428,10 +419,10 @@ class _SignInPageState extends State<SignInPage> {
                     fontWeight: FontWeight.normal),
               ),
             ],
->>>>>>> Stashed changes
           ),
         ),
       ),
+    ),
     );
   }
 }

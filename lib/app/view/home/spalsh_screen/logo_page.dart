@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -29,18 +28,14 @@ class _LogoPageState extends State<LogoPage> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-<<<<<<< Updated upstream
           Container(
             padding: EdgeInsets.fromLTRB(30, 100, 30, 0),
             child: Image.asset('assets/images/img_hatonet.png'),
           ),
-
-=======
           // Container(
           //   padding: EdgeInsets.all(30),
           //   child: Image.asset('assets/images/logo hatonet-06 (2).png'),
           // ),
->>>>>>> Stashed changes
           Spacer(),
           Container(
             child: Padding(

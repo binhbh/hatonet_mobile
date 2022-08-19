@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -61,14 +59,12 @@ class _SignUpPageState extends State<SignUpPage> {
           color: Colors.white,
           height: double.infinity,
           width: double.infinity,
-<<<<<<< Updated upstream
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 SizedBox(
                   height: 20,
-=======
           child: Column(
             children: [
               // Container(
@@ -125,67 +121,55 @@ class _SignUpPageState extends State<SignUpPage> {
                       labelText: 'Tên công ty',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8))),
->>>>>>> Stashed changes
                 ),
+              ),
                 Row(
                   children: [
-                    Expanded(
-<<<<<<< Updated upstream
-                      flex: 1,
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: InkWell(
-                              onTap: (){
-                                Navigator.pop(context);
-                              },
-                              child: Icon(Icons.arrow_back)),
-=======
-                      flex: 3,
-                      child: Container(
-                        height: 1,
-                        color: Color(0xFF455A64),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 3,
-                      child: Center(
-                        child: Container(
-                          child: Text(
-                            ' Hoặc đăng nhập qua',
-                            style: TextStyle(
-                                color: Color(0xFF455A64),
-                                fontSize: 18,
-                                fontWeight: FontWeight.normal),
-                          ),
->>>>>>> Stashed changes
+                Expanded(
+                flex: 1,
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: InkWell(
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
+                            child: Icon(Icons.arrow_back)),
+                  ),
+                ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Center(
+                    child: Container(
+                        child: Text(
+                          ' Hoặc đăng nhập qua',
+                          style: TextStyle(
+                              color: Color(0xFF455A64),
+                              fontSize: 18,
+                              fontWeight: FontWeight.normal),
                         ),
-                      ),
                     ),
-                    Expanded(
-                      flex: 3,
-<<<<<<< Updated upstream
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 5),
-                          child: Text(
-                            'Đăng ký tài khoản',
-                            style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-=======
-                      child: Container(
-                        color: Color(0xFF455A64),
-                        height: 1,
->>>>>>> Stashed changes
-                      ),
-                    ),
-                  ],
+                  ),
+                ),
+                Expanded(
+                    flex: 3,
+                child: Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Text(
+                  'Đăng ký tài khoản',
+                  style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+               ),
+                ),
+                ],
                 ),
                 SizedBox(
                   height: 25,
@@ -296,11 +280,13 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-
-              ],
-            ),
+  ],
           ),
-        ),
+      ),
+    ],
+    ),
+    ),
+    ),
       ),
     );
   }
