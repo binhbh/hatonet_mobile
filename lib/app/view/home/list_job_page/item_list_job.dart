@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hatonet_mobile/app/model/list_job.dart';
 import 'package:hatonet_mobile/app/view/home/intro/optimal_page.dart';
 
@@ -17,6 +18,7 @@ class ItemListJob extends StatefulWidget {
 class _ItemListJobState extends State<ItemListJob> {
   bool _isBluetoothOn = false;
   bool _isBluetoothhOn = true;
+  bool _isBluetoothhhOn = false;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -264,9 +266,19 @@ class _ItemListJobState extends State<ItemListJob> {
                     SizedBox(width: 10,),
                     InkWell(
                       onTap: () {
+                        setState(() {
+                          _isBluetoothhhOn = !_isBluetoothhhOn;
+                        });
+                        _isBluetoothhhOn  = true;
                         _showMaterialDialog();
                       },
-                        child: Icon( Icons.reply, size: 25,color: Colors.grey,)),
+                        child:SvgPicture.asset(
+                          _isBluetoothhhOn ? 'assets/icons/ic_svgrepo.svg' : 'assets/icons/ic_share_font.svg',
+                          height: 25,
+                          width: 25,
+                          color: Color(0xFFFF5400),
+                        ),
+                    ),
                   ],
                 ),
               ),
@@ -280,27 +292,61 @@ class _ItemListJobState extends State<ItemListJob> {
     showDialog(
         context: context,
         builder: (context) {
-          return Container(
-            height: 150,
-            width: double.infinity,
-            child: AlertDialog(
-              title: Text('Material Dialog'),
-              content: Text('Hey! I am Coflutter!'),
-              actions: <Widget>[
-                TextButton(
-                    onPressed: () {
-                      _dismissDialog();
-                    },
-                    child: Text('Close')),
-                TextButton(
-                  onPressed: () {
-                    print('HelloWorld!');
-                    _dismissDialog();
-                  },
-                  child: Text('HelloWorld!'),
-                )
+          return AlertDialog(
+            backgroundColor: Colors.grey[200],
+            title: Center(child: Text('Share to')),
+            content: Container(
+              height: 50,
+            width: double.minPositive,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: InkWell(
+                    onTap: (){},
+                    child: Material(
+                      borderOnForeground: false,
+                      shape: CircleBorder(),
+                      child: IconButton(
+                        icon: Icon(FontAwesomeIcons.facebook),color: Colors.blue,
+                        iconSize: 25,
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: InkWell(
+                    onTap: (){},
+                    child: Material(
+                      shape: CircleBorder(),
+                      child: IconButton(
+                        icon: Icon(FontAwesomeIcons.twitter,color: Colors.white,),
+                        iconSize: 25,
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: InkWell(
+                    onTap: (){},
+                    child: Material(
+                      shape: CircleBorder(),
+                      child: IconButton(
+                        icon: Icon(FontAwesomeIcons.facebookMessenger,color: Colors.blue,),
+                        iconSize: 25,
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
+          ),
           );
         });
   }

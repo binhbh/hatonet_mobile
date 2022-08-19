@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
-
-import 'app/view/home/spalsh_screen/hello.dart';
+import 'package:hatonet_mobile/app/view/home/bottom/bottom_bar.dart';
+import 'package:hatonet_mobile/app/view/home/job/job_page.dart';
+import 'package:hatonet_mobile/app/view/home/list_job_page/detail_job.dart';
+import 'package:hatonet_mobile/app/view/home/list_job_page/list_job_page.dart';
 
 
 void main(){
@@ -17,11 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Hatonet',
-      theme: new ThemeData(
+      theme: ThemeData(
         scaffoldBackgroundColor: Color(0xFFE65C00),
       ),
-      home: HelloPage(),
+       home: DetailJobPage(),
       // home: OnBoarding(),
+       //home: DetailJobPage(),
     );
   }
 }

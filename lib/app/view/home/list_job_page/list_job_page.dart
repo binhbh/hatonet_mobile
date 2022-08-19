@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hatonet_mobile/app/view/home/bottom/bottom_bar.dart';
+import 'package:hatonet_mobile/app/view/home/list_job_page/detail_job.dart';
 import 'package:hatonet_mobile/app/view/home/list_job_page/fake_data_list_job.dart';
 import 'package:hatonet_mobile/app/view/home/list_job_page/item_list_job.dart';
 class ListJobPage extends StatefulWidget {
@@ -63,10 +65,17 @@ class _ListJobPageState extends State<ListJobPage> {
                 flex: 6,
                 child: SingleChildScrollView(
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount: FAKE_LIST_JOB.length,
                       shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) => ItemListJob(item: FAKE_LIST_JOB[index], onClickItem: (){})),
+                      itemBuilder: (BuildContext context, int index) => InkWell(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => DetailJobPage()),
+                            );
+                          },
+                          child: ItemListJob(item: FAKE_LIST_JOB[index], onClickItem: (){}))),
                 ),
               ),
             ],
