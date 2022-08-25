@@ -7,6 +7,7 @@ class ListJob {
   String city = '';
   String day = '';
   String icon = '';
+  String time = '';
   String image = '';
   String checkimage = '';
   String status = '';
@@ -16,6 +17,7 @@ class ListJob {
   ListJob({
     required this.deatailjob,
     required this.day,
+    required this.time,
     required this.image,
     required this.checkimage,
     required this.status,

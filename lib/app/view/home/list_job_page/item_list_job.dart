@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hatonet_mobile/app/model/list_job.dart';
-import 'package:hatonet_mobile/app/view/home/intro/optimal_page.dart';
+import 'package:hatonet_mobile/app/view/home/list_job_page/detail_job.dart';
+import 'package:hatonet_mobile/app/view/home/list_job_page/skill_list_data_job/fake_data_skill_list_job.dart';
+import 'package:hatonet_mobile/app/view/home/list_job_page/skill_list_data_job/skill_list_data_job.dart';
 
 class ItemListJob extends StatefulWidget {
   ListJob item;
@@ -21,334 +22,214 @@ class _ItemListJobState extends State<ItemListJob> {
   bool _isBluetoothhhOn = false;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: (){
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => OptimalPage()),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => DetailJobPage()),
+        );
+      },
+      onLongPress: (){
+
       },
       child: Padding(
-        padding: EdgeInsets.only(top:10, bottom: 10),
+        padding: EdgeInsets.only(top: 10,bottom: 10),
         child: Container(
-          height: 270,
+          height: 290,
           color: Colors.white,
           width: double.infinity,
-          child:Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 10,top: 20),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 10),
-                      child: Image.asset('assets/images/logo hatonet-06.png',height: 60,width:60),
-                    ),
-                    Column(
+          child:Material(
+            elevation: 1,
+            shadowColor: Color(0xFFFFD2C4),
+            child: Column(
+              children: [
+                Expanded(
+                  flex:9,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10,),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          widget.item.tittle,
-                          style: TextStyle(color: Color(0xFF000000), fontSize: 15,fontWeight:FontWeight.w500, ),
-                        ),
                         Padding(
-                          padding: EdgeInsets.only(right: 130,top:5),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                'assets/icons/ic_simple_calendar.svg',
-                                height: 13.18,
-                                width: 13.25,
-                                color: Colors.black,
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  text: ' Kinh nghiệm: ',
-                                  style: TextStyle(color: Color(0xFF000000), fontSize: 14,fontWeight:FontWeight.w300, ),
-                                  children: <TextSpan>[
-                                TextSpan(text: widget.item.date, style: TextStyle(color: Color(0xFF000000), fontSize: 14,fontWeight:FontWeight.w300, ),),
-                                TextSpan(text:' năm', style: TextStyle(color: Color(0xFF000000), fontSize: 14,fontWeight:FontWeight.w300, ),),
-                                  ],
+                          padding: EdgeInsets.only(top: 10),
+                          child: Container(
+                            height: 70,
+                            child: Material(
+                              elevation: 3,
+                              shadowColor:Color(0xFFFF5400).withAlpha(35),
+                              child: Image.asset('assets/images/logo hatonet-06.png',height: 84,width:70,)
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10,),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 15,),
+                            Text(
+                              widget.item.tittle,
+                              style: TextStyle(color: Color(0xFF000000), fontSize: 15,fontWeight:FontWeight.w300, ),
+                            ),
+                            SizedBox(height: 7,),
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icons/ic_simple_calendar.svg',
+                                  height: 13.18,
+                                  width: 13.25,
+                                  color: Colors.black,
                                 ),
-                              ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: ' Kinh nghiệm: ',
+                                    style: TextStyle(color: Color(0xFF000000), fontSize: 14,fontWeight:FontWeight.w300, ),
+                                    children: <TextSpan>[
+                                  TextSpan(text: widget.item.date, style: TextStyle(color: Color(0xFF000000), fontSize: 14,fontWeight:FontWeight.w300, ),),
+                                  TextSpan(text:' năm', style: TextStyle(color: Color(0xFF000000), fontSize: 14,fontWeight:FontWeight.w300, ),),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 7,),
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icons/ic_building_line.svg',
+                                  height: 13.18,
+                                  width: 13.25,
+                                  color: Colors.black,
+                                ),
+                                Text(
+                                  widget.item.company,
+                                  style: TextStyle(color: Color(0xFF808080), fontSize: 12,fontWeight:FontWeight.w500,),
+                                ),
+                                SizedBox(width: 10,),
+                                SvgPicture.asset(
+                                  'assets/icons/ic_location.svg',
+                                  height: 13.18,
+                                  width: 13.25,
+                                  color: Colors.black,
+                                ),
+                                Text(widget.item.city,
+                                  style: TextStyle(color: Color(0xFF808080), fontSize: 12,fontWeight:FontWeight.w500,),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10,right: 10),
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: FAKE_SKILL_LIST_JOB.length,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) => SkillItemListJob(item: FAKE_SKILL_LIST_JOB[index], onClickItem: (){})),
+                  ),
+                ),
+                Expanded(
+                  flex: 6,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10,right: 10),
+                    child: Row(
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            text: 'Còn ',
+                        style: TextStyle(color: Color(0xFF808080), fontSize: 14,fontWeight:FontWeight.w400),
+                            children: <TextSpan>[
+                              TextSpan(text: widget.item.day, style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16,color: Color(0xFFFF5400))),
+                              TextSpan(text: ' ngày ứng tuyển',style: TextStyle( fontSize: 14,fontWeight:FontWeight.w400,),),
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 37,top:5),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                'assets/icons/ic_building_line.svg',
-                                height: 13.18,
-                                width: 13.25,
-                                color: Colors.black,
-                              ),
-                              Text(
-                                widget.item.company,
-                                style: TextStyle(color: Color(0xFF808080), fontSize: 12,fontWeight:FontWeight.w500,),
-                              ),
-                              SvgPicture.asset(
-                                'assets/icons/ic_location.svg',
-                                height: 13.18,
-                                width: 13.25,
-                                color: Colors.black,
-                              ),
-                              Text(widget.item.city,
-                                style: TextStyle(color: Color(0xFF808080), fontSize: 12,fontWeight:FontWeight.w500,),
-                              ),
+                        Spacer(),
+                        RichText(
+                          text: TextSpan(
+                            text: widget.item.money,
+                            style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w500,color: Color(0xE4FF4600)),
+                            children: <TextSpan>[ TextSpan(text: ' triệu ứng viên/tháng', style:   TextStyle(fontSize: 12.0, color: Colors.black,fontWeight: FontWeight.w400),),
                             ],
                           ),
                         ),
                       ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left:10,top:14,bottom: 14),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        width: 70.0,
-                        height: 25.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFFD2C4),
-                          border: Border.all(
-                            color: Color(0xFFFF5400),
-                            width: 0.3,
-                          ),
-                          borderRadius: BorderRadius.circular(3),
-                        ),
-                        child: Center(child: Text('NodeJS', style: new TextStyle(fontSize: 12.0, color: Color(0xFFFF5400)),),),
-                      ),
-                    ),
-                    Padding(
-                      padding:EdgeInsets.only(left: 6),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          width: 50.0,
-                          height: 25.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFFFD2C4),
-                            border: Border.all(
-                              color: Color(0xFFFF5400),
-                              width: 0.3,
-                            ),
-                            borderRadius: BorderRadius.circular(3),
-                          ),
-                          child: Center(child: Text('IOS', style: new TextStyle(fontSize: 12.0, color: Color(0xFFFF5400),),),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:EdgeInsets.only(left: 6),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          width: 70.0,
-                          height: 25.0,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Color(0xFFFF5400),
-                              width: 0.3,
-                            ),
-                            color: Color(0xFFFFD2C4),
-                            borderRadius: BorderRadius.circular(3),
-                          ),
-                          child: Center(child:  Text('Android', style: new TextStyle(fontSize: 12.0, color: Color(0xFFFF5400)),),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:EdgeInsets.only(left: 6),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          width: 59.0,
-                          height: 25.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFFFD2C4),
-                            border: Border.all(
-                              color: Color(0xFFFF5400),
-                              width: 0.3,
-                            ),
-                            borderRadius: BorderRadius.circular(3),
-                          ),
-                          child: Center(child: Text('Flutter', style: new TextStyle(fontSize: 12.0,color: Color(
-                              0xFFFF5100)),),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 10,right: 10),
-                child: Row(
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                        text: 'Còn ',
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(text: widget.item.day, style: TextStyle(fontWeight: FontWeight.w300,color: Color(0xFFFF5400))),
-                          TextSpan(text: ' ngày'),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    RichText(
-                      text: TextSpan(
-                        text: widget.item.money,
-                        style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w500,color: Color(0xE4FF4600)),
-                        children: <TextSpan>[
-                          TextSpan(text: ' triệu', style:   TextStyle(fontSize: 12.0, color: Colors.black),),
-                          TextSpan(text: ' ứng viên / tháng', style:   TextStyle(fontSize: 12.0, color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10,right: 10,top: 5),
-                  child: Text(widget.item.deatailjob, maxLines: 3,overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 14.0, color: Colors.grey),),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 10,left: 10,right: 10),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding:EdgeInsets.only(right: 1),
-                      child: SvgPicture.asset(
-                        widget.item.image,
-                        height: 16,
-                        width: 16,
-                      ),
-                    ),
-                    Container(child: Text(widget.item.status, style: TextStyle(fontSize: 12.0, color: Colors.black),)),
-                    Spacer(),
-                      InkWell(
-                        onTap: (){
-                          setState(() {
-                            _isBluetoothOn = !_isBluetoothOn;
-                          });
-                        },
-                        child: Icon(
-                          _isBluetoothOn ? Icons.favorite : Icons.favorite_border,
-                          color: Colors.red,
-                          size: 25,
-                        ),
-                      ),
-                       SizedBox(width: 10,),
-                       InkWell(
-                         onTap: (){
-                           setState(() {
-                             _isBluetoothhOn = !_isBluetoothhOn;
-                           });
-                         },
-                         child: Icon(
-                          _isBluetoothhOn ? Icons.turned_in_not : Icons.turned_in_sharp,
-                          color: Colors.yellow,
-                          size: 25,
-                      ),
-                       ),
-                    SizedBox(width: 10,),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          _isBluetoothhhOn = !_isBluetoothhhOn;
-                        });
-                        _isBluetoothhhOn  = true;
-                        _showMaterialDialog();
-                      },
-                        child:SvgPicture.asset(
-                          _isBluetoothhhOn ? 'assets/icons/ic_svgrepo.svg' : 'assets/icons/ic_share_font.svg',
-                          height: 25,
-                          width: 25,
-                          color: Color(0xFFFF5400),
-                        ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );;
-  }
-  void _showMaterialDialog() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            backgroundColor: Colors.grey[200],
-            title: Center(child: Text('Share to')),
-            content: Container(
-              height: 50,
-            width: double.minPositive,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: InkWell(
-                    onTap: (){},
-                    child: Material(
-                      borderOnForeground: false,
-                      shape: CircleBorder(),
-                      child: IconButton(
-                        icon: Icon(FontAwesomeIcons.facebook),color: Colors.blue,
-                        iconSize: 25,
-                        onPressed: () {},
-                      ),
-                    ),
+                Expanded(
+                  flex: 6,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10,right: 10),
+                    child: Text(widget.item.deatailjob, maxLines: 3,overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 14.0, color: Colors.grey),),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: InkWell(
-                    onTap: (){},
-                    child: Material(
-                      shape: CircleBorder(),
-                      child: IconButton(
-                        icon: Icon(FontAwesomeIcons.twitter,color: Colors.white,),
-                        iconSize: 25,
-                        onPressed: () {},
+                  padding: EdgeInsets.only(bottom: 10,left: 10,right: 10,top: 10),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding:EdgeInsets.only(right: 1),
+                        child: SvgPicture.asset(
+                          widget.item.image,
+                          height: 16,
+                          width: 16,
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: InkWell(
-                    onTap: (){},
-                    child: Material(
-                      shape: CircleBorder(),
-                      child: IconButton(
-                        icon: Icon(FontAwesomeIcons.facebookMessenger,color: Colors.blue,),
-                        iconSize: 25,
-                        onPressed: () {},
+                      Text(widget.item.status, style: TextStyle(fontSize: 12.0, color: Colors.black),),
+                     SizedBox(width: 10,),
+                      Padding(
+                        padding:EdgeInsets.only(right: 1),
+                        child: SvgPicture.asset(
+                          widget.item.checkimage,
+                          height: 16,
+                          width: 16,
+                        ),
                       ),
-                    ),
+                      Text(widget.item.time, style: TextStyle(fontSize: 12.0, color: Colors.black),),
+                      Spacer(),
+                      SizedBox(width: 10,),
+                         InkWell(
+                           onTap: (){
+                             setState(() {
+                               _isBluetoothhOn = !_isBluetoothhOn;
+                             });
+                           },
+                           child: Icon(
+                            _isBluetoothhOn ? Icons.turned_in_not : Icons.turned_in_sharp,
+                            color: Colors.yellow,
+                            size: 25,
+                        ),
+                         ),
+                      SizedBox(width: 10,),
+                         InkWell(
+                           onTap: (){
+                             setState(() {
+                               _isBluetoothOn = !_isBluetoothOn;
+                             });
+                           },
+                           child: Icon(
+                             _isBluetoothOn ?  Icons.download : Icons.download_outlined,
+                            color: Color(0xE4FF4600),
+                            size: 25,
+                        ),
+                         ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-          );
-        });
+        ),
+      ),
+    );;
   }
 
   _dismissDialog() {
