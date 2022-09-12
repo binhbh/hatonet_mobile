@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hatonet_mobile/app/model/list_job.dart';
-import 'package:hatonet_mobile/app/view/home/intro/optimal_page.dart';
 
 class ItemListJob extends StatefulWidget {
   ListJob item;

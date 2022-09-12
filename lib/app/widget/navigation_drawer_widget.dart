@@ -2,8 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hatonet_mobile/app/view/home/account/account_page.dart';
+import 'package:hatonet_mobile/app/view/home/accountt/account_pagee.dart';
 import 'package:hatonet_mobile/app/view/home/dashboard/dashboard_page.dart';
+import 'package:hatonet_mobile/app/view/home/details/details_page.dart';
+import 'package:hatonet_mobile/app/view/home/info_screen/info_screen.dart';
+import 'package:hatonet_mobile/app/view/home/information_list/information_list_page.dart';
+import 'package:hatonet_mobile/app/view/home/service_pack/service_pack_page.dart';
 
 class NavigationDrawerWidget extends StatefulWidget {
   NavigationDrawerWidget({Key? key}) : super(key: key);
@@ -28,25 +32,20 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
   bool _hasBeenJob = false;
   bool _hasBeenTextJob = false;
 
-  //đổi màu thông báo
-  bool _hasBeenNotification = false;
-  bool _hasBeenTextNotification  = false;
-
   //Gói dịch vụ
-  bool _hasBeenServicePack= false;
-  bool _hasBeenTextServicePack  = false;
+  bool _hasBeenServicePack = false;
+  bool _hasBeenTextServicePack = false;
 
   //Account
   bool _hasBeenAccount = false;
-  bool _hasBeenTextAccount  = false;
+  bool _hasBeenTextAccount = false;
 
   //Ý kiến khách hàng
   bool _hasBeencustomer = false;
-  bool _hasBeenTextcustomer  = false;
+  bool _hasBeenTextcustomer = false;
 
   @override
   Widget build(BuildContext context) {
-
     return Drawer(
       child: Material(
         color: Color(0xFF1F1F1F),
@@ -70,7 +69,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                 child: Text(
                   'TỔNG QUAN',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 14,
                     color: Colors.white.withOpacity(0.3),
                   ),
                 ),
@@ -83,7 +82,9 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               padding: EdgeInsets.only(left: 5),
               height: 40,
               child: FlatButton(
-                color: _hasBeenDashboard ? Color(0xFFFF6116).withOpacity(0.5) : Color(0xFF1F1F1F),
+                color: _hasBeenDashboard
+                    ? Color(0xFFFF6116).withOpacity(0.5)
+                    : Color(0xFF1F1F1F),
                 onPressed: () {
                   setState(() {
                     _hasBeenDashboard = !_hasBeenDashboard;
@@ -98,8 +99,8 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                         flex: 1,
                         child: SvgPicture.asset(
                           'assets/icons/ic_grid_add.svg',
-                          width: 20,
-                          height: 20,
+                          width: 18,
+                          height: 18,
                           color: Colors.white.withOpacity(0.8),
                         )),
                     Expanded(
@@ -110,7 +111,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                             color: _hasBeenTextDashboard
                                 ? Colors.white.withOpacity(0.8)
                                 : Colors.white.withOpacity(0.8),
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500),
                       ),
                     )
@@ -119,19 +120,20 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: 10,
             ),
             Container(
               padding: EdgeInsets.only(left: 5),
               height: 40,
               child: FlatButton(
-                color: _hasBeenJob ? Color(0xFFFF6116).withOpacity(0.5) : Color(0xFF1F1F1F),
+                color: _hasBeenJob
+                    ? Color(0xFFFF6116).withOpacity(0.5)
+                    : Color(0xFF1F1F1F),
                 onPressed: () {
                   setState(() {
                     _hasBeenJob = !_hasBeenJob;
                     _hasBeenTextJob = !_hasBeenTextJob;
                   });
-
                 },
                 child: Row(
                   children: [
@@ -139,8 +141,8 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                         flex: 1,
                         child: SvgPicture.asset(
                           'assets/icons/ic_list.svg',
-                          width: 20,
-                          height: 20,
+                          width: 18,
+                          height: 18,
                           color: Colors.white.withOpacity(0.3),
                         )),
                     Expanded(
@@ -151,7 +153,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                             color: _hasBeenTextJob
                                 ? Colors.white.withOpacity(0.3)
                                 : Colors.white.withOpacity(0.3),
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500),
                       ),
                     )
@@ -162,15 +164,21 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
             SizedBox(
               height: 25,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'QUẢN LÝ CÔNG VIỆC',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white.withOpacity(0.3),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AccountPagee()));
+              },
+              child: Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'QUẢN LÝ CÔNG VIỆC',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white.withOpacity(0.3),
+                    ),
                   ),
                 ),
               ),
@@ -179,132 +187,102 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: DropdownButton<String>(
-                value: _selectedValue1,
-                onChanged: (value) {
-                  setState(() {
-                    _selectedValue1 = value;
-                  });
-                },
-                hint: Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: SvgPicture.asset(
-                          'assets/icons/ic_assignment.svg',
-                          width: 20,
-                          height: 20,
-                          color: Colors.white.withOpacity(0.3),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 4,
-                        child: Text(
-                          'Quản lý việc làm',
-                          style: TextStyle(
-                              color: Colors.white.withOpacity(0.3),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                underline: Container(),
-                isExpanded: true,
-                items: _Job1.map(
-                  (e) => DropdownMenuItem(
-                    value: e,
-                    child: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        e,
-                        style: const TextStyle(fontSize: 14),
-                      ),
+              padding: EdgeInsets.only(left: 15,),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: SvgPicture.asset(
+                      'assets/icons/ic_assignment.svg',
+                      width: 18,
+                      height: 18,
+                      color: Colors.white.withOpacity(0.3),
                     ),
                   ),
-                ).toList(),
-                selectedItemBuilder: (BuildContext context) => _Job1.map(
-                  (e) => Center(
+                  Expanded(
+                    flex: 3,
                     child: Text(
-                      e,
+                      'Quản lý việc làm',
                       style: TextStyle(
-                          fontSize: 16,
                           color: Colors.white.withOpacity(0.3),
-                          fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
-                ).toList(),
+                  Expanded(
+                    flex: 1,
+                    child: PopupMenu(
+                        menulist: const [
+                          PopupMenuItem(
+                            child: ListTile(
+                              title: Text('Đã ứng tuyển'),
+                            ),
+                          ),
+                          PopupMenuItem(
+                            child: ListTile(
+                              title: Text('Đã lưu'),
+                            ),
+                          ),
+                        ],
+                        icon: SvgPicture.asset(
+                          'assets/icons/ic_chevron_down.svg',
+                          color: Colors.white.withOpacity(0.3),
+                          height: 18,
+                          width: 18,
+                        )),
+                  ),
+                ],
               ),
             ),
             SizedBox(
               height: 5,
             ),
             Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: DropdownButton<String>(
-                value: _selectedVlaue2,
-                onChanged: (value) {
-                  setState(() {
-                    _selectedVlaue2 = value;
-                  });
-                },
-                hint: Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: SvgPicture.asset(
-                          'assets/icons/ic_users.svg',
-                          width: 20,
-                          height: 20,
-                          color: Colors.white.withOpacity(0.3),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 4,
-                        child: Text(
-                          'Hồ sơ ứng viên',
-                          style: TextStyle(
-                              color: Colors.white.withOpacity(0.3),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                underline: Container(),
-                isExpanded: true,
-                items: _Job2.map(
-                  (e) => DropdownMenuItem(
-                    value: e,
-                    child: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        e,
-                        style: const TextStyle(fontSize: 14),
-                      ),
+              padding: EdgeInsets.only(left: 15, top: 5),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: SvgPicture.asset(
+                      'assets/icons/ic_users.svg',
+                      width: 18,
+                      height: 18,
+                      color: Colors.white.withOpacity(0.3),
                     ),
                   ),
-                ).toList(),
-                selectedItemBuilder: (BuildContext context) => _Job2.map(
-                  (e) => Center(
+                  Expanded(
+                    flex: 3,
                     child: Text(
-                      e,
+                      'Hồ sơ ứng viên',
                       style: TextStyle(
-                          fontSize: 16,
                           color: Colors.white.withOpacity(0.3),
-                          fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
-                ).toList(),
+                  Expanded(
+                    flex: 1,
+                    child: PopupMenu(
+                        menulist: const [
+                          PopupMenuItem(
+                            child: ListTile(
+                              title: Text('Danh sách của tôi'),
+                            ),
+                          ),
+                          PopupMenuItem(
+                            child: ListTile(
+                              title: Text('Đã ứng tuyển'),
+                            ),
+                          ),
+                        ],
+                        icon: SvgPicture.asset(
+                          'assets/icons/ic_chevron_down.svg',
+                          color: Colors.white.withOpacity(0.3),
+                          height: 18,
+                          width: 18,
+                        )),
+                  ),
+                ],
               ),
             ),
             SizedBox(
@@ -317,7 +295,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                 child: Text(
                   'CÀI ĐẶT',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 14,
                     color: Colors.white.withOpacity(0.3),
                   ),
                 ),
@@ -326,59 +304,20 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
             SizedBox(
               height: 20,
             ),
-
-            //Thông báo
-            Container(
-              padding: EdgeInsets.only(left: 5),
-              height: 40,
-              child: FlatButton(
-                color: _hasBeenNotification ? Color(0xFFFF6116).withOpacity(0.5) : Color(0xFF1F1F1F),
-                onPressed: () {
-                  setState(() {
-                    _hasBeenNotification = !_hasBeenNotification;
-                    _hasBeenTextNotification = !_hasBeenTextNotification;
-                  });
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                        flex: 1,
-                        child: SvgPicture.asset(
-                          'assets/icons/ic_bell_z.svg',
-                          width: 20,
-                          height: 20,
-                          color: Colors.white.withOpacity(0.3),
-                        )),
-                    Expanded(
-                      flex: 5,
-                      child: Text(
-                        'Thông báo',
-                        style: TextStyle(
-                            color: _hasBeenTextNotification
-                                ? Colors.white.withOpacity(0.3)
-                                : Colors.white.withOpacity(0.3),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
             // Gói dịch vụ
             Container(
               padding: EdgeInsets.only(left: 5),
               height: 40,
               child: FlatButton(
-                color: _hasBeenServicePack ? Color(0xFFFF6116).withOpacity(0.5) : Color(0xFF1F1F1F),
+                color: _hasBeenServicePack
+                    ? Color(0xFFFF6116).withOpacity(0.5)
+                    : Color(0xFF1F1F1F),
                 onPressed: () {
                   setState(() {
                     _hasBeenServicePack = !_hasBeenServicePack;
                     _hasBeenTextServicePack = !_hasBeenTextServicePack;
                   });
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ServicePackPage()));
                 },
                 child: Row(
                   children: [
@@ -386,8 +325,8 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                         flex: 1,
                         child: SvgPicture.asset(
                           'assets/icons/ic_package.svg',
-                          width: 20,
-                          height: 20,
+                          width: 18,
+                          height: 18,
                           color: Colors.white.withOpacity(0.3),
                         )),
                     Expanded(
@@ -398,7 +337,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                             color: _hasBeenTextServicePack
                                 ? Colors.white.withOpacity(0.3)
                                 : Colors.white.withOpacity(0.3),
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500),
                       ),
                     )
@@ -415,13 +354,16 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               padding: EdgeInsets.only(left: 5),
               height: 40,
               child: FlatButton(
-                color: _hasBeenAccount ? Color(0xFFFF6116).withOpacity(0.5) : Color(0xFF1F1F1F),
+                color: _hasBeenAccount
+                    ? Color(0xFFFF6116).withOpacity(0.5)
+                    : Color(0xFF1F1F1F),
                 onPressed: () {
                   setState(() {
                     _hasBeenAccount = !_hasBeenAccount;
                     _hasBeenTextAccount = !_hasBeenTextAccount;
                   });
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AccountPage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AccountPagee()));
                 },
                 child: Row(
                   children: [
@@ -429,8 +371,8 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                         flex: 1,
                         child: SvgPicture.asset(
                           'assets/icons/ic_users.svg',
-                          width: 20,
-                          height: 20,
+                          width: 18,
+                          height: 18,
                           color: Colors.white.withOpacity(0.3),
                         )),
                     Expanded(
@@ -441,7 +383,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                             color: _hasBeenTextAccount
                                 ? Colors.white.withOpacity(0.3)
                                 : Colors.white.withOpacity(0.3),
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500),
                       ),
                     )
@@ -456,13 +398,14 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               padding: EdgeInsets.only(left: 5),
               height: 40,
               child: FlatButton(
-                color: _hasBeencustomer ? Color(0xFFFF6116).withOpacity(0.5) : Color(0xFF1F1F1F),
+                color: _hasBeencustomer
+                    ? Color(0xFFFF6116).withOpacity(0.5)
+                    : Color(0xFF1F1F1F),
                 onPressed: () {
                   setState(() {
                     _hasBeencustomer = !_hasBeencustomer;
                     _hasBeenTextcustomer = !_hasBeenTextcustomer;
                   });
-
                 },
                 child: Row(
                   children: [
@@ -470,8 +413,8 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                         flex: 1,
                         child: SvgPicture.asset(
                           'assets/icons/ic_message.svg',
-                          width: 20,
-                          height: 20,
+                          width: 18,
+                          height: 18,
                           color: Colors.white.withOpacity(0.3),
                         )),
                     Expanded(
@@ -482,7 +425,50 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                             color: _hasBeenTextcustomer
                                 ? Colors.white.withOpacity(0.3)
                                 : Colors.white.withOpacity(0.3),
-                            fontSize: 14,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 5),
+              height: 40,
+              child: FlatButton(
+                // color: _hasBeencustomer
+                //     ? Color(0xFFFF6116).withOpacity(0.5)
+                //     : Color(0xFF1F1F1F),
+                onPressed: () {
+                  // setState(() {
+                  //   _hasBeencustomer = !_hasBeencustomer;
+                  //   _hasBeenTextcustomer = !_hasBeenTextcustomer;
+                  // });
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage()));
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                        flex: 1,
+                        child: SvgPicture.asset(
+                          'assets/icons/ic_users.svg',
+                          width: 18,
+                          height: 18,
+                          color: Colors.white.withOpacity(0.3),
+                        )),
+                    Expanded(
+                      flex: 5,
+                      child: Text(
+                        'Thông tin chi tiết',
+                        style: TextStyle(
+                            color: _hasBeenTextcustomer
+                                ? Colors.white.withOpacity(0.3)
+                                : Colors.white.withOpacity(0.3),
+                            fontSize: 12,
                             fontWeight: FontWeight.w500),
                       ),
                     )
@@ -493,6 +479,23 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class PopupMenu extends StatelessWidget {
+  final List<PopupMenuEntry> menulist;
+  final Widget? icon;
+
+  const PopupMenu({Key? key, required this.menulist, this.icon})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+      itemBuilder: ((context) => menulist),
+      icon: icon,
     );
   }
 }

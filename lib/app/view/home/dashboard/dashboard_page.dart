@@ -38,7 +38,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 alignment: Alignment.topLeft,
                 child: Text(
                   'Thống kê',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
             ),
@@ -68,7 +68,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                 child: Text(
                                   '75',
                                   style: TextStyle(
-                                      fontSize: 24, color: Colors.white),
+                                      fontSize: 22, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -84,7 +84,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                       'Việc đăng tuyển',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -96,8 +96,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                         alignment: Alignment.topRight,
                                         child: SvgPicture.asset(
                                           'assets/icons/ic_map.svg',
-                                          width: 22,
-                                          height: 22,
+                                          width: 18,
+                                          height: 18,
                                           color: Color(0xFF2DFE4E),
                                         ),
                                       ),
@@ -129,7 +129,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                 child: Text(
                                   '75',
                                   style: TextStyle(
-                                      fontSize: 24, color: Colors.white),
+                                      fontSize: 22, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -145,7 +145,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                       'Việc đăng tuyển',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -157,8 +157,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                         alignment: Alignment.topRight,
                                         child: SvgPicture.asset(
                                           'assets/icons/ic_map.svg',
-                                          width: 22,
-                                          height: 22,
+                                          width: 18,
+                                          height: 18,
                                           color: Color(0xFF2DFE4E),
                                         ),
                                       ),
@@ -201,7 +201,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                 child: Text(
                                   '75',
                                   style: TextStyle(
-                                      fontSize: 24, color: Colors.white),
+                                      fontSize: 22, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -217,7 +217,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                       'Việc đăng tuyển',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -229,8 +229,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                         alignment: Alignment.topRight,
                                         child: SvgPicture.asset(
                                           'assets/icons/ic_map.svg',
-                                          width: 22,
-                                          height: 22,
+                                          width: 18,
+                                          height: 18,
                                           color: Color(0xFF2DFE4E),
                                         ),
                                       ),
@@ -262,7 +262,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                 child: Text(
                                   '75',
                                   style: TextStyle(
-                                      fontSize: 24, color: Colors.white),
+                                      fontSize: 22, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -278,7 +278,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                       'Việc đăng tuyển',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -290,8 +290,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                         alignment: Alignment.topRight,
                                         child: SvgPicture.asset(
                                           'assets/icons/ic_map.svg',
-                                          width: 22,
-                                          height: 22,
+                                          width: 18,
+                                          height: 18,
                                           color: Color(0xFF2DFE4E),
                                         ),
                                       ),
@@ -311,46 +311,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
             SizedBox(
               height: 10,
             ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 15),
-                    child: Row(
-                      children: [
-                        Text(
-                          'THÀNH VIÊN',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                        Text(
-                          '(0)',
-                          style:
-                              TextStyle(fontSize: 18, color: Color(0xFFFF6116)),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 15),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: SvgPicture.asset(
-                        'assets/icons/ic_expand.svg',
-                        width: 24,
-                        height: 24,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+
             SizedBox(
               height: 5,
             ),
@@ -361,7 +322,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 child: Text(
                   'VIỆC ĐANG TUYỂN',
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       color: Colors.black,
                       fontWeight: FontWeight.w400),
                 ),

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hatonet_mobile/app/view/sign_in/main_page.dart';
 import 'package:hatonet_mobile/app/view/sign_in/sign_in_page.dart';
 
 class SliderPage extends StatelessWidget {
@@ -35,7 +36,7 @@ class SliderPage extends StatelessWidget {
               padding: EdgeInsets.only(right: 15,bottom: 20),
               child: InkWell(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MainPage()));
                 },
                 child: Text(
                   'Bỏ qua',

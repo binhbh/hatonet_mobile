@@ -14,7 +14,6 @@ class ItemJob extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 2),
       child: Container(
         width: double.infinity,
@@ -46,7 +45,7 @@ class ItemJob extends StatelessWidget {
                   Text(
                     item.name,
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         color: Colors.black,
                         fontWeight: FontWeight.normal),
                   ),
@@ -58,7 +57,7 @@ class ItemJob extends StatelessWidget {
                     child: Text(
                       item.date,
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 12,
                           color: Colors.black,
                           fontWeight: FontWeight.normal),
                     ),

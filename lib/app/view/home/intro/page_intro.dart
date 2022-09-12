@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hatonet_mobile/app/view/home/intro/slider_page.dart';
+import 'package:hatonet_mobile/app/view/sign_in/main_page.dart';
 import 'package:hatonet_mobile/app/view/sign_in/sign_in_page.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -75,7 +76,7 @@ class _OnBoardingState extends State<OnBoarding> {
               InkWell(
                 onTap: () {
                   if(_currentPage == 2){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> SignInPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MainPage()));
                   }
                   _controller.nextPage(
                       duration: Duration(milliseconds: 800),
