@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:hatonet_mobile/app/view/home/bottom/bottom_bar.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Hatonet',
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFFE65C00),
+        scaffoldBackgroundColor: Colors.white,
       ),
        home: BottomBarPage(),
       // home: OnBoarding(),

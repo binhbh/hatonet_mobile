@@ -145,10 +145,7 @@ class _SignInPageState extends State<SignInPage> {
                         obscureText: _secureText,
                       ),
                     ),
-                    SizedBox(
-
-                      height: 20,
-                    ),
+                    SizedBox(height: 20),
                     Padding(
                       padding: EdgeInsets.only(left: 20, right: 20),
                       child: GestureDetector(

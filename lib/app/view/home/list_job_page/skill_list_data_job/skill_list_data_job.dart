@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hatonet_mobile/app/model/list_job.dart';
 import 'package:hatonet_mobile/app/model/skill_list_job.dart';
-import 'package:hatonet_mobile/app/view/home/intro/optimal_page.dart';
-import 'package:hatonet_mobile/app/view/home/list_job_page/skill_list_data_job/fake_data_skill_list_job.dart';
 
 class SkillItemListJob extends StatefulWidget {
   SkillListJob item;
