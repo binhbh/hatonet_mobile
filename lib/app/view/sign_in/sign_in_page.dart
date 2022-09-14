@@ -230,7 +230,7 @@ class _SignInPageState extends State<SignInPage> {
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Color(0xFFFF6116),
-                                  borderRadius: BorderRadius.circular(4)),
+                                  borderRadius: BorderRadius.circular(5)),
                               height: 45,
                               width: double.infinity,
                               child: Center(
