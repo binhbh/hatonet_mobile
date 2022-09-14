@@ -13,7 +13,7 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  final user = FirebaseAuth.instance.currentUser!;
+
 
   @override
   Widget build(BuildContext context) {
@@ -381,7 +381,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     width: 5,
                   ),
                   Text(
-                    user.email!,
+                    "kieuthang@gmail.com",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.normal,

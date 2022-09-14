@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hatonet_mobile/app/view/home/bottom/bottom_bar.dart';
 import 'package:hatonet_mobile/app/view/sign_in/sign_in_page.dart';
 import 'package:hatonet_mobile/app/view/sign_up/sign_up_page.dart';
+import 'package:hatonet_mobile/app/widget/custom_page_route.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -15,7 +17,13 @@ class _AuthPageState extends State<AuthPage> {
 
   void toggleScreens(){
     setState((){
-      showLoginPage = !showLoginPage;
+      //showLoginPage = !showLoginPage;
+      Navigator.of(context).push(
+        CustomPageRoute(
+            child: SignUpPage(showLoginPage: () {  },),
+            direction: AxisDirection.left
+        ),
+      );
     });
   }
 

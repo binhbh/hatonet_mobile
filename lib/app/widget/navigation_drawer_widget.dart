@@ -8,6 +8,7 @@ import 'package:hatonet_mobile/app/view/home/details/details_page.dart';
 import 'package:hatonet_mobile/app/view/home/info_screen/info_screen.dart';
 import 'package:hatonet_mobile/app/view/home/information_list/information_list_page.dart';
 import 'package:hatonet_mobile/app/view/home/service_pack/service_pack_page.dart';
+import 'package:hatonet_mobile/app/widget/custom_page_route.dart';
 
 class NavigationDrawerWidget extends StatefulWidget {
   NavigationDrawerWidget({Key? key}) : super(key: key);
@@ -90,8 +91,12 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                     _hasBeenDashboard = !_hasBeenDashboard;
                     _hasBeenTextDashboard = !_hasBeenTextDashboard;
                   });
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DashBoardPage()));
+                  Navigator.of(context).push(
+                    CustomPageRoute(
+                        child: DashBoardPage(),
+                        direction: AxisDirection.left
+                    ),
+                  );
                 },
                 child: Row(
                   children: [
@@ -317,7 +322,13 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                     _hasBeenServicePack = !_hasBeenServicePack;
                     _hasBeenTextServicePack = !_hasBeenTextServicePack;
                   });
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ServicePackPage()));
+
+                  Navigator.of(context).push(
+                    CustomPageRoute(
+                        child: ServicePackPage(),
+                        direction: AxisDirection.down
+                    ),
+                  );
                 },
                 child: Row(
                   children: [
@@ -362,8 +373,13 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                     _hasBeenAccount = !_hasBeenAccount;
                     _hasBeenTextAccount = !_hasBeenTextAccount;
                   });
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AccountPagee()));
+
+                  Navigator.of(context).push(
+                    CustomPageRoute(
+                        child: AccountPagee(),
+                        direction: AxisDirection.down
+                    ),
+                  );
                 },
                 child: Row(
                   children: [
@@ -448,7 +464,13 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   //   _hasBeencustomer = !_hasBeencustomer;
                   //   _hasBeenTextcustomer = !_hasBeenTextcustomer;
                   // });
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage()));
+
+                Navigator.of(context).push(
+                  CustomPageRoute(
+                      child: DetailsPage(),
+                      direction: AxisDirection.left
+                  ),
+                );
                 },
                 child: Row(
                   children: [

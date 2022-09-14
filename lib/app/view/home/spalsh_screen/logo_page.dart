@@ -2,6 +2,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hatonet_mobile/app/view/home/intro/page_intro.dart';
+import 'package:hatonet_mobile/app/view/home/lottie/loading_page.dart';
 
 
 class LogoPage extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LogoPageState extends State<LogoPage> {
 
     super.initState();
     Timer(Duration(seconds: 3),(){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>OnBoarding()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>LoadingPage()));
     });
   }
 

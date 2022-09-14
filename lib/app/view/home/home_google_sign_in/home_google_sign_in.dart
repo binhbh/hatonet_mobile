@@ -7,8 +7,6 @@ import 'package:hatonet_mobile/app/view/sign_in/sign_in_page.dart';
 import 'package:provider/provider.dart';
 
 
-
-
 class HomeGoogleSignIn extends StatefulWidget {
   const HomeGoogleSignIn({Key? key}) : super(key: key);
 
