@@ -217,6 +217,7 @@ class _SignInPageState extends State<SignInPage> {
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: GestureDetector(
                             onTap: () {
+
                                signIn();
                               // // Get.to(() => BottomBarPage(), transition: Transition.zoom);
                               // Navigator.of(context).push(
